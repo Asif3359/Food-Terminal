@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -7,33 +7,33 @@ const NavBar = () => {
     }
 
     const navOptions = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Our Menu</Link></li>
-        <li><Link to="/order/salad">Order Food</Link></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/menu">Our Menu</NavLink></li>
+        <li><NavLink to="/order/salad">Order Food</NavLink></li>
 
-        <li><Link to="/dashboard/adminhome">Dashboard</Link></li>
-        <li><Link to="/dashboard/userhome">Dashboard</Link></li>
+        <li><NavLink to="/dashboard/adminhome">Dashboard</NavLink></li>
+        <li><NavLink to="/dashboard/userhome">Dashboard</NavLink></li>
         <li>
-            <Link to="/dashboard/mycart">
+            <NavLink to="/dashboard/mycart">
                 <button className="">
                     <div className="badge badge-secondary">+</div>
                 </button>
-            </Link>
+            </NavLink>
         </li>
-        <li><Link onClick={handleLogOut} className="">LogOut</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><NavLink onClick={handleLogOut} className="">LogOut</NavLink></li>
+        <li><NavLink to="/login">Login</NavLink></li>
 
     </>
 
     return (
         <>
-            <div className="navbar container mx-auto fixed z-10 bg-opacity-30  bg-black text-white">
+            <div className="navbar text-white bg-blend-overlay bg-gradient-to-r from-[#00000097] via-[#00000097] to-[#00000097] container mx-auto fixed z-10 bg-opacity-30 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 text-black dark:text-white rounded-box w-52">
                             {navOptions}
                         </ul>
                     </div>
@@ -45,7 +45,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    <a className="btn btn-sm">Get started</a>
                 </div>
             </div>
         </>
